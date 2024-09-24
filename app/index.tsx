@@ -1,7 +1,7 @@
-import { View, Text, Image, Pressable } from "react-native";
-import React from "react";
 import Logo from "@/components/Logo";
 import { router } from "expo-router";
+import React from "react";
+import { Image, Pressable, Text, View } from "react-native";
 
 type Props = {};
 

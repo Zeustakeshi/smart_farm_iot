@@ -1,14 +1,20 @@
-import { View, Text, Pressable, Image } from "react-native";
-import React from "react";
-import { router, Slot } from "expo-router";
 import { AntDesign } from "@expo/vector-icons";
+import { router, Slot } from "expo-router";
+import React from "react";
+import {
+    Image,
+    KeyboardAvoidingView,
+    Pressable,
+    Text,
+    View,
+} from "react-native";
 
 type Props = {};
 
 const _layout = (props: Props) => {
     return (
         <View className="flex-1  bg-white px-5 py-4 ">
-            <View className="relative min-h-[230]">
+            <View className="relative min-h-[150]">
                 <Pressable
                     onPress={() => {
                         router.back();
@@ -16,12 +22,12 @@ const _layout = (props: Props) => {
                 >
                     <AntDesign name="arrowleft" size={24} color="black" />
                 </Pressable>
-                <View className="w-[185] h-[100] mx-8 -rotate-12 my-5 z-10">
+                {/* <View className="w-[185] h-[100] ml-[0] -rotate-12 my-5 z-10">
                     <Image
                         className="w-full h-full object-cover"
                         source={require("@/assets/images/logo_large.png")}
                     ></Image>
-                </View>
+                </View> */}
                 <View className="absolute top-2 left-20 w-[38] h-[21]">
                     <Image
                         className="w-full h-full object-cover"
@@ -48,7 +54,9 @@ const _layout = (props: Props) => {
                 </View>
             </View>
             <View className="py-4">
-                <Slot />
+                <KeyboardAvoidingView>
+                    <Slot />
+                </KeyboardAvoidingView>
                 <View className="flex w-full flex-row-reverse justify-center items-center">
                     <View className="w-[35%] h-[1] bg-slate-300"></View>
                     <Text className="mx-5 text-slate-500 ">Hoặc</Text>
